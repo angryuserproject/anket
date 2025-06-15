@@ -92,9 +92,9 @@ function activebut(what, yind){
     var nowbut = now.querySelectorAll("button")
     nowbut.forEach(clc=>{
         clc.addEventListener("click", function(){
-            /*nowbut.forEach(make=>{
-                make.style.backgroundColor = "white "
-            })*/
+            nowbut.forEach(make=>{
+                make.style.backgroundColor = ""
+            })
             clc.style.backgroundColor = "orange"
             slovarcheck[String(yind+1) + " " + String(ind+1)] = clc.textContent
             slovarAPI[nowlabel[ind].textContent.slice(2)] = clc.textContent
@@ -105,29 +105,3 @@ function activebut(what, yind){
 [divnavq, otdelnav, divint].forEach((fnum, find)=>{
     activebut(fnum, find)
 })
-/*fetch("http://opendata.trudvsem.ru/api/v1/vacancies") 
-.then(response => {  
-    if (!response.ok) {  
-        throw new Error(`HTTP ошибка! Код: ${response.status}`);  
-    }  
-    return response.json();  
-})  
-.then(data => {  
-    console.log('Данные из API:', data);  
-})  
-.catch(error => {  
-    console.error('Ошибка при выполнении запроса:', error);  
-});  
-fetch("http://opendata.trudvsem.ru/api/v1/vacancies/vacancy/1025501858381/2aab2828-45e6-11f0-ae25-cb26dff57dd7") 
-.then(response => {  
-    if (!response.ok) {  
-        throw new Error(`HTTP ошибка! Код: ${response.status}`);  
-    }  
-    return response.json();  
-})  
-.then(data => {  
-    console.log('Данные из API:', data);  
-})  
-.catch(error => {  
-    console.error('Ошибка при выполнении запроса:', error);  
-}); */
